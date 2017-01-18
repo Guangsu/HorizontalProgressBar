@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="su.guang.horizontalprogressbar.MainActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第一个HorizontalProgressBar模拟了一个耗时请求时的场景。当进度条走到第二阶段完成后，还没有调用finish()，便会进入暂停状态，直到finish()被调用。"/>
+
+
+    <su.guang.horizontalprogressbar.widget.HorizontalProgressBar
+        android:id="@+id/progressbar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/tv1"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:progressDrawable="@drawable/horizontal_progress_bar"/>
+
+    <Button
+        android:id="@+id/btn_start1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/progressbar1"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="start1"
+        android:text="开始"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_start1"
+        android:layout_marginTop="32dp"
+        android:text="第二个HorizontalProgressBar模拟了2个任务使用同一个进度条的场景。在第1个任务结束前，开始第2个任务，此时只有第2个任务结束后，进度条才会结束。"/>
+
+    <su.guang.horizontalprogressbar.widget.HorizontalProgressBar
+        android:id="@+id/progressbar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv2"
+        android:layout_marginTop="16dp"
+        android:progressDrawable="@drawable/horizontal_progress_bar"/>
+
+    <Button
+        android:id="@+id/btn_start2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/progressbar2"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="start2"
+        android:text="开始"/>
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_start2"
+        android:layout_marginTop="32dp"
+        android:text="第三个HorizontalProgressBar模拟了一个需要根据progress值来更新progressBar的场景，如，下载进度条，网页进度条等。"/>
+
+    <su.guang.horizontalprogressbar.widget.HorizontalProgressBar
+        android:id="@+id/progressbar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv3"
+        android:layout_marginTop="16dp"
+        android:progressDrawable="@drawable/horizontal_progress_bar"/>
+
+    <Button
+        android:id="@+id/btn_start3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/progressbar3"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="start3"
+        android:text="开始"/>
+</RelativeLayout>
